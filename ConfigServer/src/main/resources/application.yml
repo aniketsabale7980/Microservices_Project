@@ -1,0 +1,19 @@
+server:
+  port: 8085
+  
+spring:
+    application:
+      name: CONFIG-SERVER 
+       
+    cloud:
+     config:
+      server:
+        git:
+          uri: https://github.com/aniketsabale7980/Hotel-rating-microservices-config
+          clone-on-start: true # Clone the repository on application startup
+          #search-paths: config # The subdirectory within your repository where configuration files are stored
+          #username: your-github-username # Your GitHub username (optional)
+          #password: your-github-password # Your GitHub password or access token (optional)
+          #skip-ssl-validation: true # Skip SSL validation for the GitHub repository (optional)
+      #label: main # The branch (or tag) of the repository to fetch configuration from
+

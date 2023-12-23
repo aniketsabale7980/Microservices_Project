@@ -1,0 +1,37 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: RATING-SERVICE
+  profiles:
+    active: dev
+    
+  datasource:
+    name: rating
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=microservices
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+  config:
+   import: configserver:http://localhost:8085   
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url: 
+#      defaultZone: http://localhost:8761/eureka
+#        
+
+okta:
+  oauth2:
+    issuer: https://dev-32675440.okta.com/oauth2/default
+    audience: api://default
+
+  
